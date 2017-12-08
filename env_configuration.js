@@ -20,13 +20,7 @@
                 var child = exec(command, function(err, stdout, stderr) {
                     console.log(command);
                     console.log(stdout);
-                    if (err) {
-                        console.log(command.toUpperCase() + ' ERROR!');  
-                        console.log(err);   
-                        reject(err)                     
-                    } else {
-                        resolve(command)                                                   
-                    }
+                    err ? console.log(command.toUpperCase() + ' ERROR!' +'\n' + err) : resolve(command);                                    
                 });
                 
         }, 1000)
